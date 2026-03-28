@@ -15,11 +15,11 @@
 void	rotate_drawing(int key, t_fdf *data)
 {
 	if (key == 49)
-		data->gamma += 0.2;
+		data->gamma += 0.04;
 	else if (key == 50)
-		data->theta += 0.2;
+		data->theta += 0.04;
 	else if (key == 51)
-		data->alpha += 0.2;
+		data->alpha += 0.04;
 }
 
 void	zoom(int key, t_fdf *data)
@@ -74,4 +74,9 @@ void	update_colors(t_fdf *data)
 	data->low_color = pseudo_random_color(data->seed);
 	data->seed += 0.5;
 	data->high_color = pseudo_random_color(data->seed);
+}
+
+void	toggle_auto_rotate(t_fdf *data)
+{
+	data->auto_rotate = !data->auto_rotate;
 }

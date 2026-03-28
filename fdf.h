@@ -50,6 +50,11 @@ typedef struct fdf
 	float	theta;
 	float	gamma;
 
+	float	rot_vel_x;
+	float	rot_vel_y;
+	float	rot_vel_z;
+
+	int		auto_rotate;
 	int		draw_isometric;
 	int		render;
 
@@ -102,6 +107,7 @@ void	rotate_drawing(int key, t_fdf *data);
 void	zoom(int key, t_fdf *data);
 void	change_projection(int key, t_fdf *dt);
 void	update_colors(t_fdf *data);
+void	toggle_auto_rotate(t_fdf *data);
 
 /* drawing functions */
 void	draw_panel_background(t_fdf *dt);

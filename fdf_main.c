@@ -6,7 +6,7 @@
 /*   By: rbarkhud <rbarkhud@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 18:12:38 by rbarkhud          #+#    #+#             */
-/*   Updated: 2025/04/11 23:32:59 by rbarkhud         ###   ########.fr       */
+/*   Updated: 2026/03/28 17:25:04 by rbarkhud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ static void	init_data(t_fdf *dt, char *file_path)
 	dt->alpha = 0;
 	dt->theta = 0;
 	dt->gamma = 0;
+	dt->rot_vel_x = 0;
+	dt->rot_vel_y = 0;
+	dt->rot_vel_z = 0;
+	dt->auto_rotate = 0;
 	dt->draw_isometric = 1;
 	dt->render = 1;
 	dt->low_color = 0x0000FF;
@@ -79,6 +83,8 @@ static int	deal_key(int key, t_fdf *dt)
 	}
 	else if (key == 'c')
 		update_colors(dt);
+	else if (key == 'o')
+		toggle_auto_rotate(dt);
 	dt->render = 1;
 	return (0);
 }

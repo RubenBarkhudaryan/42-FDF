@@ -41,6 +41,8 @@ void	draw_controls_panel(t_fdf *dt)
 	mlx_string_put(dt->mlx_ptr, dt->win_ptr, 28, 106, 0xD0D0D0, "Rotate Z: 1");
 	mlx_string_put(dt->mlx_ptr, dt->win_ptr, 28, 128, 0xD0D0D0, "Rotate Y: 2");
 	mlx_string_put(dt->mlx_ptr, dt->win_ptr, 28, 150, 0xD0D0D0, "Rotate X: 3");
+	mlx_string_put(dt->mlx_ptr, dt->win_ptr, 28, 150, 0xD0D0D0,
+		"Auto Rotate: o");
 	mlx_string_put(dt->mlx_ptr, dt->win_ptr, 28, 172, 0xD0D0D0,
 		"Projection: T / F / R / I");
 	mlx_string_put(dt->mlx_ptr, dt->win_ptr, 28, 194, 0xD0D0D0,

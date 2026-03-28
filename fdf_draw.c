@@ -6,7 +6,7 @@
 /*   By: rbarkhud <rbarkhud@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 20:04:54 by rbarkhud          #+#    #+#             */
-/*   Updated: 2026/03/28 17:03:59 by rbarkhud         ###   ########.fr       */
+/*   Updated: 2026/03/28 17:26:49 by rbarkhud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ int	draw(t_fdf *dt)
 {
 	t_point	pt1;
 
+	if (dt->auto_rotate)
+	{
+		dt->gamma += 0.01;
+		dt->render = 1;
+	}
 	if (dt->render == 0)
 		return (0);
 	mlx_destroy_image(dt->mlx_ptr, dt->img);
@@ -88,5 +93,9 @@ int	draw(t_fdf *dt)
 	draw_panel_background(dt);
 	mlx_put_image_to_window(dt->mlx_ptr, dt->win_ptr, dt->img, 0, 0);
 	draw_controls_panel(dt);
-	return (dt->render = 0, 1);
+	if (dt->auto_rotate)
+		dt->render = 1;
+	else
+		dt->render = 0;
+	return (1);
 }
