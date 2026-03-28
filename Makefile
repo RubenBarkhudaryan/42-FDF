@@ -1,21 +1,21 @@
-NAME		= fdf
-ARCHIVE		= fdf_lib.a
+NAME		=	fdf
+ARCHIVE		=	fdf_lib.a
 
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g3
+CC			=	cc
+CFLAGS		=	-Wall -Wextra -Werror -g3
 
-AR			= ar
-ARFLAGS		= -rcs
+AR			=	ar
+ARFLAGS		=	-rcs
 
-MLXFLAGS	= -Lmlx -lmlx -lX11 -lXext -lm
-MLXDIR		= mlx
+MLXFLAGS	=	-Lmlx -lmlx -lX11 -lXext -lm
+MLXDIR		=	mlx
 
 SRCS		=	fdf_parser.c fdf_utils.c fdf_map_validator.c fdf_draw.c \
 				fdf_draw_utils.c fdf_gradient.c fdf_rotate.c fdf_keyboard.c
 
-OBJS		= $(SRCS:%.c=%.o)
+OBJS		=	$(SRCS:%.c=%.o)
 
-RM			= rm -rf
+RM			=	rm -rf
 
 all : mlx $(ARCHIVE) $(NAME)
 

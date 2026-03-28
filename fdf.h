@@ -104,6 +104,8 @@ void	change_projection(int key, t_fdf *dt);
 void	update_colors(t_fdf *data);
 
 /* drawing functions */
+void	draw_panel_background(t_fdf *dt);
+void	draw_controls_panel(t_fdf *dt);
 void	move(int x, int y, t_fdf *data);
 void	draw_line(t_point *pt1, t_point *pt2, t_fdf *data);
 int		draw(t_fdf *data);

@@ -6,7 +6,7 @@
 /*   By: rbarkhud <rbarkhud@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 20:04:54 by rbarkhud          #+#    #+#             */
-/*   Updated: 2025/04/07 21:56:42 by rbarkhud         ###   ########.fr       */
+/*   Updated: 2026/03/28 17:03:59 by rbarkhud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	draw(t_fdf *dt)
 		}
 		pt1.y++;
 	}
+	draw_panel_background(dt);
 	mlx_put_image_to_window(dt->mlx_ptr, dt->win_ptr, dt->img, 0, 0);
+	draw_controls_panel(dt);
 	return (dt->render = 0, 1);
 }
