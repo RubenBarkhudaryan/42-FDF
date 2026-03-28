@@ -8,6 +8,7 @@ AR			= ar
 ARFLAGS		= -rcs
 
 MLXFLAGS	= -Lmlx -lmlx -lX11 -lXext -lm
+MLXDIR		= mlx
 
 SRCS		=	fdf_parser.c fdf_utils.c fdf_map_validator.c fdf_draw.c \
 				fdf_draw_utils.c fdf_gradient.c fdf_rotate.c fdf_keyboard.c
@@ -16,7 +17,10 @@ OBJS		= $(SRCS:%.c=%.o)
 
 RM			= rm -rf
 
-all : $(ARCHIVE) $(NAME)
+all : mlx $(ARCHIVE) $(NAME)
+
+mlx:
+	make -C ./$(MLXDIR)
 
 $(ARCHIVE) : $(OBJS)
 	make -C ./includes/gnl
@@ -42,6 +46,7 @@ $(NAME):
 
 clean :
 	$(RM) $(OBJS)
+	make -C ./$(MLXDIR) clean
 
 fclean : clean
 	rm -rf ./includes/gnl/gnl.a
@@ -50,4 +55,4 @@ fclean : clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all mlx clean fclean re
